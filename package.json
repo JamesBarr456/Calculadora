@@ -1,0 +1,24 @@
+{
+  "name": "calculadora",
+  "version": "1.0.0",
+  "description": "![Design preview for the Calculator app coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass sass/main.scss:css/stylesheets",
+    "dev": "sass --watch sass/main.scss:css/stylesheets"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesBarr456/Calculadora.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesBarr456/Calculadora/issues"
+  },
+  "homepage": "https://github.com/JamesBarr456/Calculadora#readme",
+  "devDependencies": {
+    "sass": "^1.62.0"
+  }
+}

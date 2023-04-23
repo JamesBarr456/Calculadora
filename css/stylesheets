@@ -1,0 +1,13 @@
+body {
+  background-color: aquamarine;
+}
+
+main {
+  color: black;
+}
+
+section {
+  background-color: yellow;
+}
+
+/*# sourceMappingURL=stylesheets.map */
