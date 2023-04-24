@@ -1,0 +1,56 @@
+@use "variables";
+
+html[data-theme="theme-1"] {
+  /* Backgorunds */
+  --main-bg: #{variables.$blue-500};
+  --secondary-bg: #{variables.$blue-700};
+  --terciary-bg: #{variables.$blue-800};
+
+  /* Keys */
+  --key-bg: #{variables.$desaturated-blue};
+  --key-shadow: #{variables.$desatured-blue-200};
+  --key-secondary-bg: #{variables.$red};
+  --key-secondary-shadow: #{variables.$red-400};
+  --key-terciary-bg: #{variables.$orange};
+  --key-terciary-shadow: #{variables.$grayish-orange};
+
+  /* Text */
+  --text-color: #{variables.$blue-600};
+  --text-color-white: #{variables.$White};
+}
+
+html[data-theme="theme-2"] {
+  /* Backgorunds */
+  --main-bg: #{variables.$gray};
+  --secondary-bg: #{variables.$grayish-red};
+  --terciary-bg: #{variables.$light-gray};
+
+  /* Keys */
+  --key-bg: #{variables.$cyan};
+  --key-shadow: #{variables.$cyan-400};
+  --key-secondary-bg: #{variables.$orange-300};
+  --key-secondary-shadow: #{variables.$orange-700};
+  --key-terciary-bg: #{variables.$very-light-yellow};
+  --key-terciary-shadow: #{variables.$l-grayish-orange};
+
+  /* Text */
+  --text-color: #{variables.$dark-grayish-yellow};
+}
+
+html[data-theme="theme-3"] {
+  /* Backgorunds */
+  --main-bg: #{variables.$dark-violet};
+  --secondary-bg: #{variables.$dark-violet-200};
+  // --terciary-bg: #{variables.$light-gray};
+
+  /* Keys */
+  --key-bg: #{variables.$violet};
+  --key-shadow: #{variables.$magenta};
+  --key-secondary-bg: #{variables.$cyan-200};
+  --key-secondary-shadow: #{variables.$soft-cyan};
+  --key-terciary-bg: #{variables.$violet-700};
+  --key-terciary-shadow: #{variables.$magenta-300};
+
+  /* Text */
+  --text-color: #{variables.$light-yellow};
+}

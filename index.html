@@ -1,73 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="theme-1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Calculator app</title>
 
-  <title>Frontend Mentor | Calculator app</title>
+    <link rel="stylesheet" href="css/stylesheets.css" />
+  </head>
 
-</head>
+  <body>
+    <main>
+      <!-- Inicio de la parte top de la calculadora -->
 
-<body class="theme-1">
-  <main class="calc">
-
-    <!-- Inicio de la parte top de la calculadora -->
-
-    <section>
-      <h3 class="calc__logo">Calc</h3>
-      <div class="calc__switch">
-        <p>THEME</p>
-        <div class="calc__toogle">
-          <div class="calc__toogle-nums">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-          </div>
-       <!--    <div class="calc__toogle-handler">
+      <section>
+        <h3 class="calc__logo">Calc</h3>
+        <div class="calc__switch">
+          <p>THEME</p>
+          <div class="calc__toogle">
+            <div class="calc__toogle-nums">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </div>
+            <!--    <div class="calc__toogle-handler">
             <input type="checkbox" name="" id="" class="">
             <div class="handler__riel">
               <span class="handler__riel-circle"></span>
             </div>
             <span class="handler__riel-indicator"></span>
           </div> -->
+          </div>
         </div>
-      </div>
-      <div class="calc__screen">
-        <p></p>
-      </div>
-    </section>
+        <div class="calc__screen">
+          <p></p>
+        </div>
+      </section>
 
-    <!-- Fin de la parte top de la calculadora -->
+      <!-- Fin de la parte top de la calculadora -->
 
-    <!-- Inicio de los buttons de la calculadora -->
+      <!-- Inicio de los buttons de la calculadora -->
 
-    <section class="btns">
-      <button class="btns__btn" data-btn="7">7</button>
-      <button class="btns__btn" data-btn="8">8</button>
-      <button class="btns__btn" data-btn="9">9</button>
-      <button class="btns__btn btns__btn--special" data-btn="del">DEL</button>
-      <button class="btns__btn" data-btn="4">4</button>
-      <button class="btns__btn" data-btn="5">5</button>
-      <button class="btns__btn" data-btn="6">6</button>
-      <button class="btns__btn" data-btn="+">+</button>
-      <button class="btns__btn" data-btn="1">1</button>
-      <button class="btns__btn" data-btn="2">2</button>
-      <button class="btns__btn" data-btn="3">3</button>
-      <button class="btns__btn" data-btn="-">-</button>
-      <button class="btns__btn" data-btn=".">.</button>
-      <button class="btns__btn" data-btn="0">0</button>
-      <button class="btns__btn" data-btn="/">/</button>
-      <button class="btns__btn" data-btn="*">x</button>
-      <button class="btns__btn btns__btn--special" data-btn="reset">RESET</button>
-      <button class="btns__btn btns__btn--equal" data-btn="=">=</button>
-    </section>
+      <section class="btns">
+        <button class="btns__btn" data-btn="7">7</button>
+        <button class="btns__btn" data-btn="8">8</button>
+        <button class="btns__btn" data-btn="9">9</button>
+        <button class="btns__btn btns__btn--special" data-btn="del">DEL</button>
+        <button class="btns__btn" data-btn="4">4</button>
+        <button class="btns__btn" data-btn="5">5</button>
+        <button class="btns__btn" data-btn="6">6</button>
+        <button class="btns__btn" data-btn="+">+</button>
+        <button class="btns__btn" data-btn="1">1</button>
+        <button class="btns__btn" data-btn="2">2</button>
+        <button class="btns__btn" data-btn="3">3</button>
+        <button class="btns__btn" data-btn="-">-</button>
+        <button class="btns__btn" data-btn=".">.</button>
+        <button class="btns__btn" data-btn="0">0</button>
+        <button class="btns__btn" data-btn="/">/</button>
+        <button class="btns__btn" data-btn="*">x</button>
+        <button class="btns__btn btns__btn--special" data-btn="reset">
+          RESET
+        </button>
+        <button class="btns__btn btns__btn--equal" data-btn="=">=</button>
+      </section>
 
-    <!-- Fin de los buttons de la calculadora -->
-  </main>
-  <script src="./script.js"></script>
-</body>
-
+      <!-- Fin de los buttons de la calculadora -->
+    </main>
+    <script src="./script.js"></script>
+  </body>
 </html>
