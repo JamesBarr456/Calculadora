@@ -41,7 +41,6 @@ btns.forEach(btn => { //Con el forEach puedo recorrer todas esas etiquetas y apl
                     } else {
                         Agregar(input)
                     }
-
                 } else{
                     if (screen.textContent == "0"){//si en el screen ya se ingreso un 0
                         if (input === "."){//si el valor a agregar es un punto
