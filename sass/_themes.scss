@@ -15,8 +15,8 @@ html[data-theme="theme-1"] {
   --key-terciary-shadow: #{variables.$grayish-orange};
 
   /* Text */
-  --text-color: #{variables.$blue-600};
-  --text-color-white: #{variables.$White};
+  --main-text-color: #{variables.$White};
+  --secondary-text-color: #{variables.$blue-600};
 }
 
 html[data-theme="theme-2"] {
@@ -34,7 +34,8 @@ html[data-theme="theme-2"] {
   --key-terciary-shadow: #{variables.$l-grayish-orange};
 
   /* Text */
-  --text-color: #{variables.$dark-grayish-yellow};
+  --main-text-color: #{variables.$dark-grayish-yellow};
+  --secondary-text-color: #{variables.$White};
 }
 
 html[data-theme="theme-3"] {
@@ -52,5 +53,6 @@ html[data-theme="theme-3"] {
   --key-terciary-shadow: #{variables.$magenta-300};
 
   /* Text */
-  --text-color: #{variables.$light-yellow};
+  --main-text-color: #{variables.$light-yellow};
+  --secondary-text-color: #{variables.$White};
 }

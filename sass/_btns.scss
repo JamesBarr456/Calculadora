@@ -1,0 +1,41 @@
+@use "themes";
+
+.btns {
+  padding: 1.5rem;
+  background-color: var(--secondary-bg);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: repeat(5, 60px);
+  gap: 1rem;
+
+  &__btn {
+    font-size: 32px;
+    background-color: var(--key-terciary-bg);
+    border-radius: 5px;
+    color: var(--secondary-text-color);
+    font-family: inherit;
+    box-shadow: 0 4px 0 var(--key-terciary-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--special {
+      background-color: var(--key-bg);
+      color: var(--main-text-color);
+      font-size: 20px;
+      box-shadow: 0 4px 0 var(--key-shadow);
+    }
+
+    &--reset {
+      grid-column: span 2;
+    }
+
+    &--equal {
+      grid-column: span 2;
+      color: var(--main-text-color);
+      background-color: var(--key-secondary-bg);
+      box-shadow: 0 4px 0 var(--key-secondary-shadow);
+    }
+  }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="theme-1">
+<html lang="es" data-theme="theme-1">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,30 +17,31 @@
   </head>
 
   <body>
-    <main>
+    <main class="calc container">
       <!-- Inicio de la parte top de la calculadora -->
 
-      <section>
-        <h3 class="calc__logo">Calc</h3>
+      <section class="calc__top">
+        <h1 class="calc__logo">calc</h1>
         <div class="calc__switch">
-          <p>THEME</p>
-          <div class="calc__toogle">
-            <div class="calc__toogle-nums">
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
+          <p class="calc__switch-name">theme</p>
+          <div class="calc__toggle">
+            <div>
+              <label for="theme1">1</label>
+              <input id="theme1" type="radio" name="theme" value="theme-1" />
             </div>
-            <!--    <div class="calc__toogle-handler">
-            <input type="checkbox" name="" id="" class="">
-            <div class="handler__riel">
-              <span class="handler__riel-circle"></span>
+            <div>
+              <label for="theme2">2</label>
+              <input id="theme2" type="radio" name="theme" value="theme-2" />
             </div>
-            <span class="handler__riel-indicator"></span>
-          </div> -->
+            <div>
+              <label for="theme3">3</label>
+              <input id="theme3" type="radio" name="theme" value="theme-3" />
+            </div>
           </div>
         </div>
         <div class="calc__screen">
-          <p></p>
+          <!-- 399,981,123123,12,12,3123123123 -->
+          <!-- <p>399,981</p> -->
         </div>
       </section>
 
@@ -65,7 +66,10 @@
         <button class="btns__btn" data-btn="0">0</button>
         <button class="btns__btn" data-btn="/">/</button>
         <button class="btns__btn" data-btn="*">x</button>
-        <button class="btns__btn btns__btn--special" data-btn="reset">
+        <button
+          class="btns__btn btns__btn--special btns__btn--reset"
+          data-btn="reset"
+        >
           RESET
         </button>
         <button class="btns__btn btns__btn--equal" data-btn="=">=</button>
