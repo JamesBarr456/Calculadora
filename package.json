@@ -4,8 +4,8 @@
   "description": "![Design preview for the Calculator app coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "build": "sass sass/main.scss:css/stylesheets",
-    "dev": "sass --watch sass/main.scss:css/stylesheets"
+    "build": "sass sass/main.scss:css/stylesheets.css",
+    "dev": "sass --watch sass/main.scss:css/stylesheets.css"
   },
   "repository": {
     "type": "git",

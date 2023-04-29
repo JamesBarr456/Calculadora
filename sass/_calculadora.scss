@@ -1,0 +1,36 @@
+@use "themes";
+
+.calc {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  &__logo {
+    color: var(--main-text-color);
+    font-size: 2rem;
+  }
+
+  &__switch {
+    color: var(--main-text-color);
+    margin-left: auto;
+  }
+
+  &__screen {
+    // flex-basis: 100%;
+    width: 100%;
+    min-height: 88px;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: var(--terciary-bg);
+
+    font-size: 32px;
+    color: var(--main-text-color);
+  }
+}

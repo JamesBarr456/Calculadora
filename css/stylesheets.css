@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"); /* THEME-1 */
+/* Backgrounds */
+/* Keys */
+/* Text */
+/* THEME-2 */
+/* Backgrounds */
+/* Keys */
+/* Text */
+/* THEME-3 */
+/* Backgrounds */
+/* Keys */
+/* Text */
+html[data-theme=theme-1] {
+  /* Backgorunds */
+  --main-bg: hsl(222, 26%, 31%);
+  --secondary-bg: hsl(223, 31%, 20%);
+  --terciary-bg: hsl(224, 36%, 15%);
+  /* Keys */
+  --key-bg: hsl(225, 21%, 49%);
+  --key-shadow: hsl(224, 28%, 35%);
+  --key-secondary-bg: hsl(6, 63%, 50%);
+  --key-secondary-shadow: hsl(6, 70%, 34%);
+  --key-terciary-bg: hsl(30, 25%, 89%);
+  --key-terciary-shadow: hsl(28, 16%, 65%);
+  /* Text */
+  --main-text-color: hsl(0, 0%, 100%);
+  --secondary-text-color: hsl(221, 14%, 31%);
+}
+
+html[data-theme=theme-2] {
+  /* Backgorunds */
+  --main-bg: hsl(0, 0%, 90%);
+  --secondary-bg: hsl(0, 5%, 81%);
+  --terciary-bg: hsl(0, 0%, 93%);
+  /* Keys */
+  --key-bg: hsl(185, 42%, 37%);
+  --key-shadow: hsl(185, 58%, 25%);
+  --key-secondary-bg: hsl(25, 98%, 40%);
+  --key-secondary-shadow: hsl(25, 99%, 27%);
+  --key-terciary-bg: hsl(45, 7%, 89%);
+  --key-terciary-shadow: hsl(35, 11%, 61%);
+  /* Text */
+  --main-text-color: hsl(60, 10%, 19%);
+  --secondary-text-color: hsl(0, 0%, 100%);
+}
+
+html[data-theme=theme-3] {
+  /* Backgorunds */
+  --main-bg: hsl(268, 75%, 9%);
+  --secondary-bg: hsl(268, 71%, 12%);
+  /* Keys */
+  --key-bg: hsl(281, 89%, 26%);
+  --key-shadow: hsl(285, 91%, 52%);
+  --key-secondary-bg: hsl(176, 100%, 44%);
+  --key-secondary-shadow: hsl(177, 92%, 70%);
+  --key-terciary-bg: hsl(268, 47%, 21%);
+  --key-terciary-shadow: hsl(290, 70%, 36%);
+  /* Text */
+  --main-text-color: hsl(52, 100%, 62%);
+  --secondary-text-color: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: "League Spartan", sans-serif;
+  background-color: var(--main-bg);
+}
+
+.container {
+  max-width: 375px;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.calc {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.calc__top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.calc__logo {
+  color: var(--main-text-color);
+  font-size: 2rem;
+}
+.calc__switch {
+  color: var(--main-text-color);
+  margin-left: auto;
+}
+.calc__screen {
+  width: 100%;
+  min-height: 88px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: var(--terciary-bg);
+  font-size: 32px;
+  color: var(--main-text-color);
+}
+
+.btns {
+  padding: 1.5rem;
+  background-color: var(--secondary-bg);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: repeat(5, 60px);
+  gap: 1rem;
+}
+.btns__btn {
+  font-size: 32px;
+  background-color: var(--key-terciary-bg);
+  border-radius: 5px;
+  color: var(--secondary-text-color);
+  font-family: inherit;
+  box-shadow: 0 4px 0 var(--key-terciary-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btns__btn--special {
+  background-color: var(--key-bg);
+  color: var(--main-text-color);
+  font-size: 20px;
+  box-shadow: 0 4px 0 var(--key-shadow);
+}
+.btns__btn--reset {
+  grid-column: span 2;
+}
+.btns__btn--equal {
+  grid-column: span 2;
+  color: var(--main-text-color);
+  background-color: var(--key-secondary-bg);
+  box-shadow: 0 4px 0 var(--key-secondary-shadow);
+}
+
+/*# sourceMappingURL=stylesheets.css.map */
