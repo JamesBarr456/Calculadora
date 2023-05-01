@@ -14,15 +14,17 @@ function Reset() {
 }
 
 function Agregar(value) {
+    str += value;
     screen.append(value);
 }
 
 function Resultado(value) {
-    if (eval(value).toString().length < 16 ){
+    if (eval(value).toString().length < 16) {
         screen.textContent = eval(value);
-    }else {
+    } else {
         screen.textContent = eval(value).toExponential(5)
     }
+    str = screen.textContent;
 }
 
 
@@ -40,17 +42,25 @@ btns.forEach(btn => { //Con el forEach puedo recorrer todas esas etiquetas y apl
                 break;
             case "reset":
                 Reset();
-                str = ""
+                str = "";
                 break;
             case "=":
-                str += screen.textContent;
-                Resultado(str); //Me devuelve el resultado de mi operacion
+                console.log(str);
+                if (screen.textContent.length !== 0) {//Evito que ingrese un str vacio a la fn
+                    if (!operacion.includes(str.slice(-1))) { //Evito que ingrese a la funcion un str donde el ultimo parametro sea un operador
+                        Resultado(str);
+                    }
+                }
+
                 break;
             default:
+
                 if (operacion.includes(input)) { //Si es una simbolo de operacion
-                    if (screen.textContent.length !== 0) {
-                        str += screen.textContent + input;
-                        Reset();
+                    if (!str.includes(input)) {
+                        if (screen.textContent.length !== 0) {
+                            str += input;
+                            Reset();
+                        }
                     }
                 } else {
                     if (screen.textContent == "0") { //si en el screen ya se ingreso un 0
