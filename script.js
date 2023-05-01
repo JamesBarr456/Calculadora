@@ -1,10 +1,12 @@
-const especiales = ["reset", "del"];
 const operacion = ["*", "+", "-", "/"];
-var screen = document.querySelector(".calc__screen p");
-var btns = document.querySelectorAll(".btns button"); //Este me trae todas las etiquetas button de la seccion btns
+let screen = document.querySelector(".calc__screen p");
+let btns = document.querySelectorAll(".btns button"); //Este me trae todas las etiquetas button de la seccion btn
+let str = "";
 
+//-----------------------------------------------------
 function Delete() {
   screen.textContent = screen.textContent.slice(0, -1);
+  str = str.slice(0, -1);
 }
 
 function Reset() {
@@ -12,52 +14,87 @@ function Reset() {
 }
 
 function Agregar(value) {
-  screen.append(value);
+  str += value;
+  screen.textContent += value;
 }
 
-function Repeat(str, value) {
-  return str.indexOf(value) !== -1;
+function Resultado(value) {
+  if (eval(value).toString() === "Infinity") {
+    screen.textContent = "∞";
+    setTimeout(() => {
+      screen.textContent = "";
+      str = "";
+    }, 2000);
+  } else if (eval(value).toString() === "NaN") {
+    screen.textContent = "Indeterminado";
+    setTimeout(() => {
+      screen.textContent = "";
+      str = "";
+    }, 2000);
+  } else {
+    if (eval(value).toString().length < 16) {
+      screen.textContent = eval(value);
+      str = eval(value);
+    } else {
+      screen.textContent = eval(value).toExponential(5);
+    }
+  }
 }
+
+//----------------------------------------------------------
 
 btns.forEach((btn) => {
   //Con el forEach puedo recorrer todas esas etiquetas y aplicarle el dataset para saber que valor tiene el boton apretado
   btn.onclick = function () {
     let input = btn.dataset.btn; //Almacenamos el valor del boton clickeado
 
-    if (especiales.includes(input)) {
-      if (input === "reset") {
+    //
+    if (screen.textContent.length > 16) {
+      screen.textContent = Number(screen.textContent).toExponential(5);
+    }
+
+    switch (input) {
+      case "del":
+        if (screen.textContent !== "") {
+          Delete();
+        }
+        break;
+      case "reset":
         Reset();
-      } else if (input === "del") {
-        Delete();
-      }
-    } else {
-      if (input == "=") {
-        //Pregunto si el valor no es ´=´
-        screen.textContent = eval(screen.textContent); //Me devuelve el resultado de mi operacion
-      } else {
-        if (operacion.includes(input)) {
-          //Si es una simbolo de operacion
-          if (Repeat(screen.textContent, input)) {
-            //si el simbolo se repetiria en el screen
-            console.log("se repite");
-          } else {
-            Agregar(input);
-          }
-        } else {
-          if (screen.textContent == "0") {
-            //si en el screen ya se ingreso un 0
-            if (input === ".") {
-              //si el valor a agregar es un punto
-              Agregar(input);
-            } else {
-              console.log("Agregar un punto");
-            }
-          } else {
-            Agregar(input);
+        str = "";
+        break;
+      case "=":
+        if (screen.textContent.length !== 0) {
+          //Evito que ingrese un str vacio a la fn
+          if (!operacion.includes(str[str.length - 1])) {
+            //Evito que ingrese a la r
+            Resultado(str);
           }
         }
-      }
+        break;
+      case ".":
+        if (str == "0" || (str !== "" && !str.includes("."))) {
+          Agregar(input);
+        }
+        break;
+      default:
+        if (operacion.includes(input)) {
+          //Si es una simbolo de operacion
+          if (screen.textContent.length !== 0) {
+            str += input;
+            Reset();
+          }
+        } else {
+          if (str !== "0") {
+            Agregar(input);
+          } else {
+            if (input === "0") return;
+          }
+        }
+        break;
     }
+
+    console.log(str);
   };
 });
 
