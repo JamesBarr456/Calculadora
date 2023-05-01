@@ -22,26 +22,45 @@
 
       <section class="calc__top">
         <h1 class="calc__logo">calc</h1>
-        <div class="calc__switch">
-          <p class="calc__switch-name">theme</p>
-          <div class="calc__toggle">
-            <div>
-              <label for="theme1">1</label>
-              <input id="theme1" type="radio" name="theme" value="theme-1" />
+
+        <div class="calc__themes">
+          <p class="calc__themes-name">theme</p>
+
+          <div class="switch">
+            <div class="switch__numbers">
+              <label class="switch__number" for="theme1">1</label>
+              <label class="switch__number" for="theme2">2</label>
+              <label class="switch__number" for="theme3">3</label>
             </div>
-            <div>
-              <label for="theme2">2</label>
-              <input id="theme2" type="radio" name="theme" value="theme-2" />
-            </div>
-            <div>
-              <label for="theme3">3</label>
-              <input id="theme3" type="radio" name="theme" value="theme-3" />
+            <div class="switch__toggle">
+              <input
+                class="switch__radio"
+                id="theme1"
+                type="radio"
+                name="theme"
+                value="theme-1"
+              />
+              <input
+                class="switch__radio"
+                id="theme2"
+                type="radio"
+                name="theme"
+                value="theme-2"
+              />
+              <input
+                class="switch__radio"
+                id="theme3"
+                type="radio"
+                name="theme"
+                value="theme-3"
+              />
+              <div class="switch__dot"></div>
             </div>
           </div>
         </div>
+
         <div class="calc__screen">
-          <!-- 399,981,123123,12,12,3123123123 -->
-          <!-- <p>399,981</p> -->
+          <p>399,981</p>
         </div>
       </section>
 

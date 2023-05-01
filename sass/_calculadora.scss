@@ -17,9 +17,18 @@
     font-size: 2rem;
   }
 
-  &__switch {
+  &__themes {
     color: var(--main-text-color);
     margin-left: auto;
+    display: flex;
+    align-items: end;
+    gap: 1.5rem;
+  }
+
+  &__themes-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
   }
 
   &__screen {
@@ -32,5 +41,6 @@
 
     font-size: 32px;
     color: var(--main-text-color);
+    text-align: end;
   }
 }
