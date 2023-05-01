@@ -1,12 +1,12 @@
 const operacion = ["*", "+", "-", "/"];
 let screen = document.querySelector(".calc__screen p");
-let btns = document.querySelectorAll(".btns button"); //Este me trae todas las etiquetas button de la seccion btn
-let str = "";
+let btns = document.querySelectorAll(".btns button");
+let resultado = "";
 
 //-----------------------------------------------------
 function Delete() {
   screen.textContent = screen.textContent.slice(0, -1);
-  str = str.slice(0, -1);
+  resultado = resultado.slice(0, -1);
 }
 
 function Reset() {
@@ -14,7 +14,7 @@ function Reset() {
 }
 
 function Agregar(value) {
-  str += value;
+  resultado += value;
   screen.textContent += value;
 }
 
@@ -23,18 +23,18 @@ function Resultado(value) {
     screen.textContent = "∞";
     setTimeout(() => {
       screen.textContent = "";
-      str = "";
+      resultado = "";
     }, 2000);
   } else if (eval(value).toString() === "NaN") {
     screen.textContent = "Indeterminado";
     setTimeout(() => {
       screen.textContent = "";
-      str = "";
+      resultado = "";
     }, 2000);
   } else {
     if (eval(value).toString().length < 16) {
       screen.textContent = eval(value);
-      str = eval(value);
+      resultado = eval(value);
     } else {
       screen.textContent = eval(value).toExponential(5);
     }
@@ -49,8 +49,8 @@ btns.forEach((btn) => {
     let input = btn.dataset.btn; //Almacenamos el valor del boton clickeado
 
     //
-    if (screen.textContent.length > 16) {
-      screen.textContent = Number(screen.textContent).toExponential(5);
+    if (screen.textContent.length > 15) {
+      screen.textContent = Number(resultado).toExponential(5);
     }
 
     switch (input) {
@@ -61,19 +61,22 @@ btns.forEach((btn) => {
         break;
       case "reset":
         Reset();
-        str = "";
+        resultado = "";
         break;
       case "=":
         if (screen.textContent.length !== 0) {
-          //Evito que ingrese un str vacio a la fn
-          if (!operacion.includes(str[str.length - 1])) {
+          //Evito que ingrese un resultado vacio a la fn
+          if (!operacion.includes(resultado[resultado.length - 1])) {
             //Evito que ingrese a la r
-            Resultado(str);
+            Resultado(resultado);
           }
         }
         break;
       case ".":
-        if (str == "0" || (str !== "" && !str.includes("."))) {
+        if (
+          resultado == "0" ||
+          (resultado !== "" && !resultado.includes("."))
+        ) {
           Agregar(input);
         }
         break;
@@ -81,11 +84,11 @@ btns.forEach((btn) => {
         if (operacion.includes(input)) {
           //Si es una simbolo de operacion
           if (screen.textContent.length !== 0) {
-            str += input;
+            resultado += input;
             Reset();
           }
         } else {
-          if (str !== "0") {
+          if (resultado !== "0") {
             Agregar(input);
           } else {
             if (input === "0") return;
@@ -94,7 +97,7 @@ btns.forEach((btn) => {
         break;
     }
 
-    console.log(str);
+    console.log(resultado);
   };
 });
 
